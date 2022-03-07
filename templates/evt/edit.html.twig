@@ -1,0 +1,35 @@
+{% extends 'base-front.html.twig' %}
+{% block title %}MyCoach
+{% endblock %}
+
+
+{% block hero%} {% endblock %}
+
+{% block about %}{% endblock %}
+
+{% block prog %}{% endblock %}
+
+{% block coach %}{% endblock %}
+
+{% block contact %}{% endblock %}
+
+{% block body %}
+<section class="class section" id="class">
+
+				<div class="container">
+					<div class="row">
+
+						<div class="col-lg-12 col-12 text-center">
+    <h1>édit évènement</h1>
+
+    
+   {{ include('evt/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('evt_index') }}">retour à la liste</a>
+
+    
+    		</div>
+					</div>
+				</div>
+			</section>
+{% endblock %}

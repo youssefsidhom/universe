@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+<div class="contact-form webform">
+	<h1>
+		<font color="33A8FF">
+			Inscription
+		</font>
+	</h1>
+	{{ form_start(registrationForm, {'attr': {'class': 'row'}}) }}
+	<div>
+		{{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+		<span class="error">{{ form_errors(registrationForm.email) }}</span>
+	</div>
+	<div>
+		{{ form_widget(registrationForm.username, {'attr': {'placeholder': 'Nom d\'utilisateur'}}) }}
+                <span class="error">{{ form_errors(registrationForm.username) }}</span>
+            </div>
+            <div >
+                {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe'}}) }}
+                <span class="error">{{ form_errors(registrationForm.plainPassword) }}</span>
+            </div>
+            <div >
+                <input type="submit" name="" class="btn btn-primary" value="M'inscrire">
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
