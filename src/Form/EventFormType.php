@@ -12,8 +12,17 @@ class EventFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
+        ->add('nom', TextType::class, [
+            'constraints' => [
+                new Length([
+                    'min' => 4,
+                    'minMessage' => 'Votre nom doit contenir au moins {{ limit }} caractères.',
+                ]),
+            ],
+        ])
             ->add('date')
+
+
         ;
     }
 

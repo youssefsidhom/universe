@@ -14,11 +14,18 @@
 {% block contact %}{% endblock %}
 
 {% block body %}
+               
   <section class="class section" id="class">
 
 				<div class="container">
 					<div class="row">
+                    
    <div class="col-lg-12 col-12 text-center">
+  {% for message in app.flashes('info')%}
+<div class="alert alert-danger">
+{{message}}
+</div>
+  {% endfor %}
 
     <table class="table">
         <thead>

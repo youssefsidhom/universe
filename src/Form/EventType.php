@@ -15,7 +15,9 @@ class EventType extends AbstractType
         $builder
             ->add('nom')
             ->add('date')
-            ->add('image', FileType::class)
+            ->add('image', FileType::class, [
+                'mapped' => false
+            ])
             ->add('ticket')
         ;
     }

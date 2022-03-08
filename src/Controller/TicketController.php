@@ -11,6 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
+
+
+
+
 /**
  * @Route("/ticket")
  */
@@ -25,6 +30,7 @@ class TicketController extends AbstractController
             'tickets' => $ticketRepository->findAll(),
         ]);
     }
+    
 
     /**
      * @Route("/new", name="ticket_new", methods={"GET", "POST"})
@@ -68,6 +74,10 @@ class TicketController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+            $this->addFlash(
+                'info',
+              'votre evenement est modifier  !!',  
+          );
 
             return $this->redirectToRoute('ticket_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -86,6 +96,10 @@ class TicketController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$ticket->getId(), $request->request->get('_token'))) {
             $entityManager->remove($ticket);
             $entityManager->flush();
+            $this->addFlash(
+                'info',
+              'votre evenement est supprimer  !!',  
+          );
         }
 
         return $this->redirectToRoute('ticket_index', [], Response::HTTP_SEE_OTHER);

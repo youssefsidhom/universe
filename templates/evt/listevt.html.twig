@@ -1,0 +1,32 @@
+
+
+{% block body %}
+
+   <h1 align = "center" >liste des Evénements</h1><hr>
+    <table class="table table-bordered table-responsive schedule-table" data-aos="fade-up" data-aos-delay="300">
+    <thead class="thead-light">
+									
+									<th>Id</th>
+									<th>nom</th>
+                                    <th>date</th>
+                                    <th>ticket</th>
+								
+									
+								</thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.nom }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                                <td>{{ event.ticket }}</td>
+
+          
+            </tr>
+                
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

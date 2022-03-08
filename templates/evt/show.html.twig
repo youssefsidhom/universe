@@ -45,12 +45,13 @@
             </tr>
             <tr>
                 <th>image</th>
-                <td>{{ event.image }}</td>
+                <td><img src="{{ asset('picture/' ~ event.image) }}" alt="" width="90" height="90"></td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('evt_index') }}">Retour à la liste</a>
+    
 
     <a href="{{ path('evt_edit', {'id': event.id}) }}">Modifier</a>
 {{ include('evt/_delete_form.html.twig') }}  

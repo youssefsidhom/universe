@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TicketRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TicketRepository::class)
@@ -19,11 +20,13 @@ class Ticket
 
     /**
      * @ORM\Column(type="float")
+     *  @Assert\NotBlank(message="Prix is required")
      */
     private $prix;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\NotBlank(message="Nom is required")
      */
     private $nom;
     public function __toString() {
