@@ -43,10 +43,15 @@
                 <th>ticket</th>
                 <td>{{ event.ticket }}</td>
             </tr>
+             <tr>
+                <th>Description</th>
+                <td>{{ event.descr }}</td>
+            </tr>
             <tr>
                 <th>image</th>
                 <td><img src="{{ asset('picture/' ~ event.image) }}" alt="" width="90" height="90"></td>
             </tr>
+
         </tbody>
     </table>
 

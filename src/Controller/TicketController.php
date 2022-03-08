@@ -76,7 +76,7 @@ class TicketController extends AbstractController
             $entityManager->flush();
             $this->addFlash(
                 'info',
-              'votre evenement est modifier  !!',  
+              'votre Ticket est modifier  !!',  
           );
 
             return $this->redirectToRoute('ticket_index', [], Response::HTTP_SEE_OTHER);
@@ -98,7 +98,7 @@ class TicketController extends AbstractController
             $entityManager->flush();
             $this->addFlash(
                 'info',
-              'votre evenement est supprimer  !!',  
+              'votre ticket est supprimer  !!',  
           );
         }
 

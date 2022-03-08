@@ -40,6 +40,11 @@ class Event
      */
     private $ticket;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descr;
+
 
     public function __toString() {
         return $this->nom;
@@ -94,6 +99,18 @@ class Event
     public function setTicket(?Ticket $ticket): self
     {
         $this->ticket = $ticket;
+
+        return $this;
+    }
+
+    public function getDescr(): ?string
+    {
+        return $this->descr;
+    }
+
+    public function setDescr(string $descr): self
+    {
+        $this->descr = $descr;
 
         return $this;
     }

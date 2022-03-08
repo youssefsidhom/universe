@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EventType extends AbstractType
 {
@@ -19,6 +20,8 @@ class EventType extends AbstractType
                 'mapped' => false
             ])
             ->add('ticket')
+            ->add('descr', TextareaType::class, [
+                'attr' => array('cols' => '20', 'rows' => '2')])
         ;
     }
 
